@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title>Daftar Magang</ion-title>
+    <ion-buttons slot="primary">
+    	<ion-back-button text="Back" icon="" color="tertiary" fill="outline"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-item>
+    <ion-input type="hidden" [(ngModel)]="nama">{{profiles.nama}}</ion-input>
+	</ion-item>
+
+	<ion-item>
+    <ion-input type="hidden" [(ngModel)]="nim">{{profiles.nim}}</ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="hidden" [(ngModel)]="prodi">{{profiles.prodi}}</ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating"> Nama Perusahaan </ion-label>
+    <ion-input type="text" [(ngModel)]="nama_perusahaan"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating"> Alamat </ion-label>
+    <ion-input type="text" [(ngModel)]="alamat"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating"> No. Telp </ion-label>
+    <ion-input type="text" [(ngModel)]="notelp"></ion-input>
+  </ion-item>
+
+	<ion-button color="primary" expand="block" (click)="submit()">SUBMIT</ion-button>
+
+</ion-content>

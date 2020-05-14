@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title  color="secondary">Daftar</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="closePage()" color="secondary">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>   
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked" color="primary">Nama</ion-label>
+    <ion-input [(ngModel)]="persetujuan.nama" placeholder="Enter nama"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked" color="primary">nama perusahaan</ion-label>
+    <ion-textarea [(ngModel)]="persetujuan.nama_perusahaan" placeholder="Enter nama perusahaan"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked" color="primary">alamat</ion-label>
+    <ion-input [(ngModel)]="persetujuan.alamat" placeholder="Enter alamat"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked" color="primary">no telp</ion-label>
+    <ion-input [(ngModel)]="persetujuan.notelp" placeholder="Enter no telp"></ion-input>
+  </ion-item>
+  <ion-button color="primary" expand="block" (click)="submit()">SUBMIT</ion-button>
+</ion-content>

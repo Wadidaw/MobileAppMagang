@@ -1,0 +1,43 @@
+<!-- //src/app/tab2/tab2.page.html -->
+<ion-header>
+  <ion-toolbar color="warning">
+      <ion-buttons slot="start">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+   </ion-toolbar>
+ </ion-header>
+
+<ion-content class="ion-padding">
+  <ion-toolbar class="ion-text" style="color: #192433;">
+    Pilih
+    <br>
+    <b>MagangMu</b>
+  </ion-toolbar>
+
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingText="Pull to refresh" refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+<h1></h1>
+  <ion-card  style="margin: auto;">
+  <ion-list *ngIf="lokers.length > 0; else showIfNoData" style="color: #2F584C;">
+   
+      <ion-item *ngFor="let loker of lokers" class="itemlist"(click)="goDetail(loker)">
+        <ion-label style="padding-left: 3px;">
+          <h4  style="color: #2F584C;">Prodi :  {{loker.prodi}}</h4>
+          <h4  style="color: #2F584C;">Perusahaan :  {{loker.perusahaan}}</h4>
+          <h3 style="margin-left:4%" style="color: #2F584C; font-weight:500;" >Jobdesk : {{loker.jobdesk}} </h3>
+          <h6  style="color: #2F584C;">Jumlah : {{loker.jumlah_penerimaan}}</h6>
+        </ion-label>
+      </ion-item>
+      
+    
+  </ion-list>
+</ion-card>
+  <ng-template #showIfNoData>
+    <p>Tidak ada data</p>
+  </ng-template>
+</ion-content>

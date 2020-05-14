@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="warning">
+      <ion-buttons slot="start">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="goEdit()" color="secondary">
+        <ion-icon name="create"> </ion-icon>
+      </ion-button>
+    </ion-buttons>
+   </ion-toolbar>
+ </ion-header>
+
+<ion-content class="ion-padding">
+  <ion-toolbar class="ion-text" style="color: #192433;">
+    Profile
+    <br>
+    <b>MagangMu</b>
+  </ion-toolbar>
+
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingText="Pull to refresh" refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+<h1></h1>
+  <ion-card  style="margin: auto;">
+   
+      <ion-item class="itemlist"(click)="goDetail(profiles)">
+        <ion-label style="padding-left: 3px;">
+          <h1  style="color: #2F584C;">Nama :  {{profiles.nama}}</h1>
+          <h2  style="color: #2F584C;">Nim :  {{profiles.nim}}</h2>
+          <h3 style="margin-left:4%" style="color: #2F584C; font-weight:500;" >Program Studi : {{profiles.prodi}} </h3>
+          <h4  style="color: #2F584C;">Kelas : {{profiles.kelas}}</h4>
+          <h5  style="color: #2F584C;">Status Magang : {{profiles.status}}</h5>
+          <h6  style="color: #2F584C;">Periode Magang : {{profiles.start_date}} s/d {{profiles.end_date}}</h6>
+        </ion-label>
+      </ion-item>
+      
+    
+</ion-card>
+  <ng-template #showIfNoData>
+    <p>Tidak ada data</p>
+  </ng-template>
+</ion-content>

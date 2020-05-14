@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab2" color="secondary"> </ion-back-button>
+    </ion-buttons>
+    <ion-title color="secondary">Book Description</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goEdit()" color="secondary">
+        <ion-icon name="create"> </ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides [options]="slideOpts" >
+    
+    <ion-slide>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title color="primary"> {{profile.nama}}</ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <ion-label>
+        <p>Penulis : {{profile.nim}}</p>
+      
+        <p style="text-align: left; padding-bottom: 10px;padding-top: 10px;">Description: {{profile.prodi}}</p>
+        <p>{{profile.kelas}}</p>
+      </ion-label>    
+    </ion-card-content>
+  </ion-card>
+  </ion-slide>
+  </ion-slides> 
+</ion-content>
