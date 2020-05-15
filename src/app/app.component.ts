@@ -32,7 +32,7 @@ export class AppComponent {
 
     this.storage.get('storage_xxx').then((res)=>{
       if(res == null){
-        this.navCtrl.navigateRoot(['/login']);
+        this.navCtrl.navigateRoot(['/index']);
       }else{
         this.navCtrl.navigateRoot(['/home']);
       }
